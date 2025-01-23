@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.animated-object {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    animation: float 6s infinite;
+}
+
+.object1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.object2 {
+    top: 40%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.object3 {
+    top: 80%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.object4 {
+    top: 60%;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.object5 {
+    top: 20%;
+    left: 80%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30px) translateX(30px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+}
+
+.converter {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 300px;
+    z-index: 1;
+    position: relative;
+    border: 2px solid #238636;
+}
+
+.converter h1 {
+    font-size: 24px;
+    color: #f0f6fc;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #238636;
+    padding-bottom: 10px;
+}
+
+.converter select,
+.converter input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #21262d;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #161b22;
+    color: #f0f6fc;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.converter select:focus,
+.converter input:focus {
+    outline: none;
+    border-color: #238636;
+}
+
+.converter button {
+    background-color: #238636;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #2ea043;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.converter button:hover {
+    background-color: #2ea043;
+}
+
+.converter .result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #8b949e;
+    padding: 10px;
+    border: 1px dashed #238636;
+    border-radius: 5px;
+    background: #0d1117;
+}
