@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0d1117;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a2e;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -8,7 +8,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #eaeaea;
 }
+
 
 .background {
     position: absolute;
@@ -20,122 +22,189 @@ body {
     z-index: -1;
 }
 
-.animated-object {
+
+.ring {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    border: 15px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-    animation: float 6s infinite;
+    animation: spin 10s infinite linear;
+    opacity: 0.3;
 }
 
-.object1 {
-    top: 10%;
+.light1 {
+    width: 300px;
+    height: 300px;
+    top: 20%;
     left: 20%;
     animation-delay: 0s;
 }
 
-.object2 {
-    top: 40%;
-    left: 70%;
-    animation-delay: 1s;
-}
-
-.object3 {
-    top: 80%;
-    left: 30%;
+.light2 {
+    width: 400px;
+    height: 400px;
+    top: 60%;
+    left: 60%;
     animation-delay: 2s;
 }
 
-.object4 {
-    top: 60%;
-    left: 50%;
-    animation-delay: 3s;
-}
-
-.object5 {
-    top: 20%;
-    left: 80%;
+.light3 {
+    width: 500px;
+    height: 500px;
+    top: 40%;
+    left: 30%;
     animation-delay: 4s;
 }
 
-@keyframes float {
+@keyframes spin {
     0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.animated-object {
+    position: absolute;
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.object-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.object-square {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #36d1dc, #5b86e5);
+    top: 30%;
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.object-triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid #ffd700;
+    top: 80%;
+    left: 40%;
+    animation-delay: 3s;
+}
+
+.object-circle-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #34e89e, #0f3443);
+    top: 50%;
+    left: 20%;
+    animation-delay: 4.5s;
+}
+
+.object-square-small {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    top: 15%;
+    left: 80%;
+    animation-delay: 6s;
+}
+
+.object-triangle-small {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #ffcc70;
+    top: 70%;
+    left: 10%;
+    animation-delay: 7.5s;
+}
+
+
+@keyframes float {
+    0%, 100% {
         transform: translateY(0) translateX(0);
-        opacity: 1;
+        opacity: 0.8;
     }
     50% {
         transform: translateY(-30px) translateX(30px);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(0) translateX(0);
-        opacity: 1;
+        opacity: 0.6;
     }
 }
 
+
 .converter {
-    background: #161b22;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 300px;
-    z-index: 1;
+    width: 350px;
     position: relative;
-    border: 2px solid #238636;
+    z-index: 1;
+    border: 3px solid #00dbde;
 }
 
 .converter h1 {
-    font-size: 24px;
-    color: #f0f6fc;
+    font-size: 26px;
+    color: #ffffff;
     margin-bottom: 20px;
-    border-bottom: 2px solid #238636;
     padding-bottom: 10px;
+    border-bottom: 2px solid #ffffff;
 }
 
 .converter select,
 .converter input {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #21262d;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
-    background: #161b22;
-    color: #f0f6fc;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    background: #e6e6e6;
+    color: #333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .converter select:focus,
 .converter input:focus {
     outline: none;
-    border-color: #238636;
+    border: 2px solid #00dbde;
 }
 
 .converter button {
-    background-color: #238636;
-    color: white;
+    background: #00dbde;
+    color: #ffffff;
     border: none;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    border: 1px solid #2ea043;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .converter button:hover {
-    background-color: #2ea043;
+    background: #00b2bf;
 }
 
 .converter .result {
     margin-top: 20px;
-    font-size: 18px;
-    color: #8b949e;
-    padding: 10px;
-    border: 1px dashed #238636;
+    font-size: 20px;
+    color: #00ffb3;
+    padding: 15px;
+    border: 2px dashed #00dbde;
     border-radius: 5px;
-    background: #0d1117;
+    background: rgba(255, 255, 255, 0.1);
 }
