@@ -25,10 +25,11 @@ body {
 
 .ring {
     position: absolute;
-    border: 15px solid rgba(255, 255, 255, 0.1);
+    border: 15px solid transparent;
     border-radius: 50%;
-    animation: spin 10s infinite linear;
-    opacity: 0.3;
+    animation: spin 10s infinite linear, glow-color 6s infinite alternate;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.2), 
+                0 0 40px 20px rgba(255, 255, 255, 0.1);
 }
 
 .light1 {
@@ -55,6 +56,7 @@ body {
     animation-delay: 4s;
 }
 
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -65,80 +67,86 @@ body {
 }
 
 
-.animated-object {
+@keyframes glow-color {
+    0% {
+        border-color: rgba(255, 99, 71, 0.3);
+        box-shadow: 0 0 20px 10px rgba(255, 99, 71, 0.5), 
+                    0 0 40px 20px rgba(255, 99, 71, 0.3);
+    }
+    50% {
+        border-color: rgba(0, 255, 127, 0.3);
+        box-shadow: 0 0 20px 10px rgba(0, 255, 127, 0.5), 
+                    0 0 40px 20px rgba(0, 255, 127, 0.3);
+    }
+    100% {
+        border-color: rgba(30, 144, 255, 0.3);
+        box-shadow: 0 0 20px 10px rgba(30, 144, 255, 0.5), 
+                    0 0 40px 20px rgba(30, 144, 255, 0.3);
+    }
+}
+
+
+.floating-symbol {
     position: absolute;
-    animation: float 6s infinite ease-in-out;
-    opacity: 0.8;
+    font-size: 80px;
+    font-weight: bold;
+    animation: float 8s infinite ease-in-out, fade 8s infinite alternate;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5), 
+                 -2px -2px 8px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.object-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #ff7eb3, #ff758c);
-    top: 10%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.object-square {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #36d1dc, #5b86e5);
-    top: 30%;
-    left: 70%;
-    animation-delay: 1.5s;
-}
-
-.object-triangle {
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 70px solid #ffd700;
-    top: 80%;
-    left: 40%;
-    animation-delay: 3s;
-}
-
-.object-circle-small {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #34e89e, #0f3443);
-    top: 50%;
-    left: 20%;
-    animation-delay: 4.5s;
-}
-
-.object-square-small {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+.symbol-dollar {
     top: 15%;
-    left: 80%;
-    animation-delay: 6s;
+    left: 10%;
+    animation-delay: 0s;
+    color: #ffd700;
 }
 
-.object-triangle-small {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid #ffcc70;
-    top: 70%;
-    left: 10%;
-    animation-delay: 7.5s;
+.symbol-euro {
+    top: 40%;
+    left: 70%;
+    animation-delay: 2s;
+    color: #00dbde;
+}
+
+.symbol-rupee {
+    top: 60%;
+    left: 20%;
+    animation-delay: 4s;
+    color: #ff416c;
+}
+
+.symbol-pound {
+    top: 80%;
+    left: 50%;
+    animation-delay: 6s;
+    color: #ff4b2b;
+}
+
+.symbol-yen {
+    top: 25%;
+    left: 80%;
+    animation-delay: 8s;
+    color: #36d1dc;
 }
 
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0) translateX(0);
-        opacity: 0.8;
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-30px) translateX(30px);
+        transform: translateY(-40px) scale(1.1);
+    }
+}
+
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
         opacity: 0.6;
     }
 }
