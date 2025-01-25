@@ -24,7 +24,7 @@ function convertCurrency() {
     `;
 }
 
-// Simulate real-time exchange rate updates
+
 setInterval(() => {
     for (const currency in exchangeRates) {
         for (const target in exchangeRates[currency]) {
@@ -36,7 +36,7 @@ setInterval(() => {
     }
 }, 5000);
 
-// Dynamic background animation
+
 function animateBackground() {
     const canvas = document.getElementById('ringCanvas');
     const ctx = canvas.getContext('2d');
