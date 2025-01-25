@@ -3,48 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Converter</title>
+    <title>Dynamic Currency Converter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background">
-        
-        <div class="ring light1"></div>
-        <div class="ring light2"></div>
-        <div class="ring light3"></div>
-
-        
-        <div class="floating-symbol symbol-dollar">$</div>
-        <div class="floating-symbol symbol-euro">€</div>
-        <div class="floating-symbol symbol-rupee">₹</div>
-        <div class="floating-symbol symbol-pound">£</div>
-        <div class="floating-symbol symbol-yen">¥</div>
+    <canvas id="ringCanvas"></canvas>
+    <div class="container">
+        <div class="converter-card">
+            <h1>Currency Converter</h1>
+            <div class="inputs">
+                <select id="fromCurrency">
+                    <option value="USD">US Dollar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="INR">Indian Rupee (INR)</option>
+                    <option value="GBP">British Pound (GBP)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                </select>
+                <select id="toCurrency">
+                    <option value="INR">Indian Rupee (INR)</option>
+                    <option value="USD">US Dollar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="GBP">British Pound (GBP)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                </select>
+                <input type="number" id="amount" placeholder="Enter amount">
+                <button onclick="convertCurrency()">Convert</button>
+            </div>
+            <div class="result" id="result">Result will appear here.</div>
+        </div>
     </div>
-
-    <div class="converter">
-        <h1>Currency Converter</h1>
-        <select id="fromCurrency">
-            <option value="USD">US Dollar (USD)</option>
-            <option value="EUR">Euro (EUR)</option>
-            <option value="INR">Indian Rupee (INR)</option>
-            <option value="GBP">British Pound (GBP)</option>
-            <option value="JPY">Japanese Yen (JPY)</option>
-        </select>
-
-        <select id="toCurrency">
-            <option value="INR">Indian Rupee (INR)</option>
-            <option value="USD">US Dollar (USD)</option>
-            <option value="EUR">Euro (EUR)</option>
-            <option value="GBP">British Pound (GBP)</option>
-            <option value="JPY">Japanese Yen (JPY)</option>
-        </select>
-
-        <input type="number" id="amount" placeholder="Enter amount">
-        <button onclick="convertCurrency()">Convert</button>
-
-        <div class="result" id="result"></div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
