@@ -1,42 +1,135 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #185a9d;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo h2 {
+    color: white;
     font-family: 'Poppins', sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Welcome Section */
+.welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    position: relative;
     overflow: hidden;
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.welcome-text {
+    font-size: 4rem;
+    color: #185a9d;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: scale(0.7);
+    animation: fadeInText 2s forwards, bounceIn 2s forwards;
 }
 
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Converter Section */
+.converter-section {
+    padding: 50px 0;
+    background: #ffffff;
+}
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    color: white;
+    flex-direction: column;
 }
 
 .converter-card {
-    backdrop-filter: blur(12px);
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.8), rgba(30, 30, 30, 0.9)); 
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    padding: 25px;
-    width: 420px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4); 
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    margin: 20px;
 }
 
 .converter-card h1 {
-    color: #ffffff;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6); 
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
-
 
 .inputs select,
 .inputs input,
@@ -44,44 +137,44 @@ canvas {
     width: 90%;
     padding: 12px;
     margin: 10px 0;
-    border: none;
-    border-radius: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     font-size: 16px;
     outline: none;
-    text-align: center;
-    transition: all 0.3s ease;
 }
 
 .inputs button {
-    background: linear-gradient(90deg, #43cea2, #185a9d);
+    background-color: #185a9d;
     color: white;
+    border: none;
     cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .inputs button:hover {
-    background: linear-gradient(90deg, #185a9d, #43cea2);
+    background-color: #ffcc00;
+    color: #185a9d;
 }
 
+/* Footer */
+#footer {
+    background-color: #185a9d;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
 
+#footer .footer-content p {
+    font-size: 1rem;
+}
+
+/* Result Display */
 .result {
     margin-top: 15px;
     padding: 10px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2); /* Softer transparency for results */
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     font-size: 18px;
-    color: #fff;
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: #185a9d;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
