@@ -24,7 +24,6 @@ function convertCurrency() {
     `;
 }
 
-
 setInterval(() => {
     for (const currency in exchangeRates) {
         for (const target in exchangeRates[currency]) {
@@ -35,38 +34,3 @@ setInterval(() => {
         }
     }
 }, 5000);
-
-
-function animateBackground() {
-    const canvas = document.getElementById('ringCanvas');
-    const ctx = canvas.getContext('2d');
-    const w = canvas.width = window.innerWidth;
-    const h = canvas.height = window.innerHeight;
-
-    const objects = Array(30).fill().map(() => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        radius: Math.random() * 40 + 10,
-        color: `hsl(${Math.random() * 360}, 70%, 70%)`,
-        speedX: (Math.random() - 0.5) * 2,
-        speedY: (Math.random() - 0.5) * 2
-    }));
-
-    function draw() {
-        ctx.clearRect(0, 0, w, h);
-        objects.forEach(obj => {
-            ctx.beginPath();
-            ctx.arc(obj.x, obj.y, obj.radius, 0, Math.PI * 2);
-            ctx.fillStyle = obj.color;
-            ctx.fill();
-            obj.x += obj.speedX;
-            obj.y += obj.speedY;
-            if (obj.x - obj.radius < 0 || obj.x + obj.radius > w) obj.speedX *= -1;
-            if (obj.y - obj.radius < 0 || obj.y + obj.radius > h) obj.speedY *= -1;
-        });
-        requestAnimationFrame(draw);
-    }
-    draw();
-}
-
-window.onload = animateBackground;
