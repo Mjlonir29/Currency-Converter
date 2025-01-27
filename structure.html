@@ -3,58 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CurrencyX Converter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>Currency Converter - Modern UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h2>CurrencyX</h2>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#converter">Converter</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Currency<span>X</span></h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#converter">Converter</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="welcome-section">
-        <h1 class="welcome-text">Welcome to CurrencyX!</h1>
-    </section>
-
-    <section id="converter" class="converter-section">
-        <div class="container">
-            <div class="converter-card">
-                <h1>Currency Converter</h1>
-                <div class="inputs">
-                    <select id="fromCurrency">
-                        <option value="USD">US Dollar (USD)</option>
-                        <option value="EUR">Euro (EUR)</option>
-                        <option value="INR">Indian Rupee (INR)</option>
-                        <option value="GBP">British Pound (GBP)</option>
-                        <option value="JPY">Japanese Yen (JPY)</option>
-                    </select>
-                    <select id="toCurrency">
-                        <option value="INR">Indian Rupee (INR)</option>
-                        <option value="USD">US Dollar (USD)</option>
-                        <option value="EUR">Euro (EUR)</option>
-                        <option value="GBP">British Pound (GBP)</option>
-                        <option value="JPY">Japanese Yen (JPY)</option>
-                    </select>
-                    <input type="number" id="amount" placeholder="Enter amount">
-                    <button onclick="convertCurrency()">Convert</button>
-                </div>
-                <div class="result" id="result">Result will appear here.</div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Welcome to Currency<span>X</span></h2>
+                <p class="hero-subtitle">Your go-to tool for seamless and accurate currency conversion.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer id="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 CurrencyX. All rights reserved.</p>
+        <!-- Currency Converter Section -->
+        <section id="converter" class="converter-section">
+            <div class="container">
+                <div class="converter-card">
+                    <h2 class="card-title">Currency Converter</h2>
+                    <div class="form-group">
+                        <label for="fromCurrency">From:</label>
+                        <select id="fromCurrency">
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toCurrency">To:</label>
+                        <select id="toCurrency">
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" placeholder="Enter amount">
+                    </div>
+                    <button class="convert-btn" onclick="convertCurrency()">Convert</button>
+                    <div id="result" class="result-box">Result will appear here.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Currency<span>X</span>. All rights reserved.</p>
         </div>
     </footer>
 
