@@ -25,6 +25,7 @@ function convertCurrency() {
     
     const rate = exchangeRates[fromCurrency][toCurrency];
     const convertedAmount = (amount * rate).toFixed(2);
+    
 
     document.getElementById("result").innerHTML = `
         ${amount} ${fromCurrency} = <strong>${convertedAmount} ${toCurrency}</strong>
