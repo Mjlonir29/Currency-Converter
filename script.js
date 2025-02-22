@@ -7,6 +7,7 @@ const exchangeRates = {
     JPY: { USD: 0.009, EUR: 0.0077, INR: 0.68, GBP: 0.0067, JPY: 1 },
 };
 
+
 function convertCurrency() {
     const fromCurrency = document.getElementById("fromCurrency").value;
     const toCurrency = document.getElementById("toCurrency").value;
