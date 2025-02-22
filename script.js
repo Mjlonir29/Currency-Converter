@@ -18,6 +18,7 @@ function convertCurrency() {
     if (!amount || amount <= 0) {
         document.getElementById("result").innerText = "Please enter a valid amount.";
         return;
+        
     }
 
     
