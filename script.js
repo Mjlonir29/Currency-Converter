@@ -12,6 +12,7 @@ function convertCurrency() {
     const fromCurrency = document.getElementById("fromCurrency").value;
     const toCurrency = document.getElementById("toCurrency").value;
     const amount = parseFloat(document.getElementById("amount").value);
+
     
 
     if (!amount || amount <= 0) {
